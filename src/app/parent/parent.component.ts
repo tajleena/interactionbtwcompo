@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit,Input,Output } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-parent',
   templateUrl: './parent.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./parent.component.css']
 })
-export class ParentComponent  {
-  name = 'Angular';
+export class ParentComponent implements OnInit {
+   receivedParentMessage:string;
+   messageToSendParent:string='';
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+  SendToParent(){
+    this.messageToSendParent="Hello Child. How Are You?";
+  }
+  getMessage(message:string){
+    this.receivedParentMessage=message;
+  }
+
 }

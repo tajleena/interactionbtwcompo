@@ -1,4 +1,7 @@
-<hello name="{{ name }}"></hello>
+<!-- <app-child [receievedParentMessage]="messageToSendParent"(messageToEmit)="getMessage($event)"></app-child> -->
+
+<h2 >Hello! I'm Child</h2>
+<button class="btn btn-success" (click)=" SendToChild()">Send To Parent</button>
 <p>
-  Start editing to see some magic happen :)
+  <b>Parent Replied : "{{ receivedParentMessage }}"</b>
 </p>
